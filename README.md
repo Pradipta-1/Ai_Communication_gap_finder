@@ -56,7 +56,7 @@ Built on a **Cyberpunk / Glitch Design System** featuring chamfered geometric pa
 - **Frontend**: React 18, TypeScript, Vite, Tailwind CSS, Lucide React icons, Framer Motion, Recharts, Canvas Confetti.
 - **Backend**: Node.js, Express.js, REST API architecture.
 - **Database**: MongoDB with Mongoose (with automatic in-memory fallback for zero-configuration startup).
-- **Styling**: Cyberpunk / Glitch Design System (void black `#0a0a0f`, neon green `#00ff88`, hot magenta `#ff00ff`, cyan `#00d4ff`).
+- **Styling**: Tactile Industrial Neumorphic Telemetry system with full Light and Dark mode themes, tactile switches, LED indicators, and physical chassis aesthetics.
 
 ---
 
@@ -64,7 +64,10 @@ Built on a **Cyberpunk / Glitch Design System** featuring chamfered geometric pa
 
 ### 1. Install Dependencies
 ```bash
-# In root directory
+# Install all dependencies (root, client, server) with one command:
+npm run install:all
+
+# Or individually:
 npm install
 npm install --prefix client
 npm install --prefix server
