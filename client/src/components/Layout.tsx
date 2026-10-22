@@ -7,15 +7,11 @@ import { X } from 'lucide-react';
 interface LayoutProps {
   scanlinesActive: boolean;
   onToggleScanlines: () => void;
-  theme: 'light' | 'dark';
-  onToggleTheme: () => void;
 }
 
 export const Layout: React.FC<LayoutProps> = ({
   scanlinesActive,
   onToggleScanlines,
-  theme,
-  onToggleTheme,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -60,8 +56,6 @@ export const Layout: React.FC<LayoutProps> = ({
       <div className="flex-1 flex flex-col min-w-0 bg-[#e0e5ec] app-content">
         <Navbar
           onOpenMobileMenu={() => setMobileMenuOpen(true)}
-          theme={theme}
-          onToggleTheme={onToggleTheme}
         />
         <main className="flex-1 overflow-y-auto">
           <Outlet />

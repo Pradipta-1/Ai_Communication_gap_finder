@@ -31,8 +31,8 @@ export const ExportModal: React.FC<ExportModalProps> = ({ analysis, onClose }) =
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#2d3436]/40 backdrop-blur-sm flex items-center justify-center p-4 font-sans select-none">
-      <div className="bg-[#e0e5ec] shadow-[16px_16px_32px_rgba(0,0,0,0.25),-16px_-16px_32px_#ffffff] border border-[#ffffff]/60 w-full max-w-md p-6 rounded-2xl relative space-y-5 corner-screws animate-in fade-in zoom-in-95 duration-200">
+    <div className="fixed inset-0 z-50 bg-[#2d3436]/40 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4 font-sans select-none">
+      <div className="bg-[#e0e5ec] shadow-[16px_16px_32px_rgba(0,0,0,0.25),-16px_-16px_32px_#ffffff] border border-[#ffffff]/60 w-full max-w-md p-4 sm:p-6 rounded-xl sm:rounded-2xl relative space-y-4 sm:space-y-5 corner-screws animate-in fade-in zoom-in-95 duration-200">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 p-2 text-[#2d3436] rounded-lg bg-[#e0e5ec] shadow-[3px_3px_6px_#babecc,-3px_-3px_6px_#ffffff] active:shadow-[inset_2px_2px_4px_#babecc,inset_-2px_-2px_4px_#ffffff]"

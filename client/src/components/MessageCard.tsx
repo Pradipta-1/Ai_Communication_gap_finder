@@ -33,7 +33,7 @@ export const MessageCard: React.FC<MessageCardProps> = ({
         if (gap && onSelectGap) onSelectGap(gap);
         if (onSelectMessage) onSelectMessage(message);
       }}
-      className={`relative p-4 rounded-xl transition-all duration-150 cursor-pointer font-sans border ${
+      className={`relative p-3 sm:p-4 rounded-xl transition-all duration-150 cursor-pointer font-sans border ${
         isSelected
           ? 'bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#babecc,inset_-4px_-4px_8px_#ffffff] border-[#ff4757]/60'
           : isEvidence
@@ -44,11 +44,11 @@ export const MessageCard: React.FC<MessageCardProps> = ({
       }`}
     >
       {/* Top row: Avatar + Speaker name + Timestamp + Intent tag */}
-      <div className="flex items-center justify-between gap-3 mb-2.5">
-        <div className="flex items-center gap-2.5">
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-2 sm:mb-2.5">
+        <div className="flex items-center gap-2 sm:gap-2.5">
           {/* Avatar initial stamped token */}
           <div
-            className="w-7 h-7 rounded-lg bg-[#e0e5ec] shadow-[2px_2px_4px_#babecc,-2px_-2px_4px_#ffffff] flex items-center justify-center text-xs font-mono font-bold"
+            className="w-7 h-7 rounded-lg bg-[#e0e5ec] shadow-[2px_2px_4px_#babecc,-2px_-2px_4px_#ffffff] flex items-center justify-center text-xs font-mono font-bold flex-shrink-0"
             style={{
               color: speakerColor,
               border: `1px solid ${speakerColor}30`,
@@ -57,12 +57,12 @@ export const MessageCard: React.FC<MessageCardProps> = ({
             {initials}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <span className="text-xs font-mono font-bold text-[#2d3436] uppercase text-embossed">
               {message.speaker}
             </span>
             {message.timestamp && (
-              <span className="text-[11px] font-mono text-[#4a5568]">
+              <span className="text-[10px] sm:text-[11px] font-mono text-[#4a5568]">
                 [{message.timestamp}]
               </span>
             )}
@@ -93,12 +93,12 @@ export const MessageCard: React.FC<MessageCardProps> = ({
       </div>
 
       {/* Message Text */}
-      <p className="text-xs sm:text-sm font-mono leading-relaxed text-[#2d3436] pl-9 break-words">
+      <p className="text-xs sm:text-sm font-mono leading-relaxed text-[#2d3436] pl-0 sm:pl-9 break-words">
         {message.text}
       </p>
 
       {/* Bottom meta row: Topic tag + GapBadge indicator */}
-      <div className="mt-3 pl-9 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#babecc]/60 shadow-[0_1px_0_#ffffff]">
+      <div className="mt-2.5 sm:mt-3 pl-0 sm:pl-9 flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-[#babecc]/60 shadow-[0_1px_0_#ffffff]">
         <div className="flex items-center gap-2">
           {message.topic && (
             <span className="inline-flex items-center gap-1 text-[10px] font-mono font-semibold uppercase text-[#4a5568] bg-[#d1d9e6] px-2 py-0.5 rounded shadow-[inset_1px_1px_2px_#babecc,inset_-1px_-1px_2px_#ffffff]">

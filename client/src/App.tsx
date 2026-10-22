@@ -13,31 +13,24 @@ import { Layout } from './components/Layout';
 
 export function App() {
   const [scanlinesActive, setScanlinesActive] = useState(false);
-  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    const savedTheme = localStorage.getItem('gaplens_theme');
-    return savedTheme === 'dark' ? 'dark' : 'light';
-  });
 
   const toggleScanlines = () => {
     setScanlinesActive(prev => !prev);
   };
 
-  const toggleTheme = () => {
-    setTheme(currentTheme => currentTheme === 'light' ? 'dark' : 'light');
-  };
-
   useEffect(() => {
     localStorage.removeItem('gaplens_openrouter_api_key');
     localStorage.removeItem('gaplens_openrouter_model');
-    document.documentElement.dataset.theme = theme;
-    localStorage.setItem('gaplens_theme', theme);
-  }, [theme]);
+    localStorage.removeItem('gaplens_theme');
+    document.documentElement.removeAttribute('data-theme');
+    delete document.documentElement.dataset.theme;
+  }, []);
 
   return (
     <BrowserRouter>
       <Routes>
         {/* Public Landing Page without fixed sidebar */}
-        <Route path="/" element={<Landing theme={theme} onToggleTheme={toggleTheme} />} />
+        <Route path="/" element={<Landing />} />
 
         {/* Intelligence Application Suite with Cyberpunk Layout */}
         <Route
@@ -45,8 +38,6 @@ export function App() {
             <Layout
               scanlinesActive={scanlinesActive}
               onToggleScanlines={toggleScanlines}
-              theme={theme}
-              onToggleTheme={toggleTheme}
             />
           }
         >

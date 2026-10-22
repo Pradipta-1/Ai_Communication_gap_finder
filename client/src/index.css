@@ -24,22 +24,6 @@
     --shadow-glow: 0 0 10px 2px rgba(255, 71, 87, 0.6);
   }
 
-  :root[data-theme='dark'] {
-    color-scheme: dark;
-    --background: #171b23;
-    --chassis: #1d232d;
-    --panel: #252d39;
-    --muted: #323c4b;
-    --text-primary: #e5eaf2;
-    --text-muted: #a8b3c4;
-    --border-shadow: #11151b;
-    --border-light: #374252;
-    --border-dark: #10141a;
-    --shadow-card: 8px 8px 16px #11151b, -8px -8px 16px #27303d;
-    --shadow-floating: 12px 12px 24px #11151b, -12px -12px 24px #27303d, inset 1px 1px 0 rgba(255, 255, 255, 0.05);
-    --shadow-pressed: inset 6px 6px 12px #11151b, inset -6px -6px 12px #27303d;
-    --shadow-recessed: inset 4px 4px 8px #11151b, inset -4px -4px 8px #27303d;
-  }
 
   body {
     background-color: #e0e5ec;
@@ -186,100 +170,38 @@
   }
 }
 
-:root[data-theme='dark'] body,
-:root[data-theme='dark'] .app-shell,
-:root[data-theme='dark'] .app-content,
-:root[data-theme='dark'] .landing-page {
-  background-color: #171b23 !important;
-  color: #e5eaf2;
+/* ─── Mobile & Small Screen Responsive Enhancements ─── */
+
+/* Prevent horizontal page shaking/overflow */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  -webkit-tap-highlight-color: transparent;
 }
 
-:root[data-theme='dark'] ::-webkit-scrollbar-track {
-  background: #1d232d;
+/* Safe word break on small screens */
+.break-words-safe {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
-:root[data-theme='dark'] ::-webkit-scrollbar-thumb {
-  background: #374252;
-  border-color: #1d232d;
-  box-shadow: 1px 1px 2px #11151b;
+/* Smooth horizontal scroll for wide components on mobile */
+.scroll-x-mobile {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
-:root[data-theme='dark'] [class*="bg-[#e0e5ec]"],
-:root[data-theme='dark'] [class~="bg-background"],
-:root[data-theme='dark'] [class~="bg-chassis"],
-:root[data-theme='dark'] [class~="bg-card"] {
-  background-color: #1d232d !important;
+@media (max-width: 640px) {
+  /* Ensure comfortable touch targets on mobile */
+  .btn-tactile-primary,
+  .btn-tactile-chassis {
+    min-height: 40px;
+  }
+  
+  /* Compact scrollbars on mobile */
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
 }
 
-:root[data-theme='dark'] [class*="bg-[#d1d9e6]"],
-:root[data-theme='dark'] [class*="bg-[#f0f2f5]"],
-:root[data-theme='dark'] [class~="bg-panel"],
-:root[data-theme='dark'] [class~="bg-recessed"],
-:root[data-theme='dark'] [class~="bg-muted"],
-:root[data-theme='dark'] [class~="bg-white"] {
-  background-color: #252d39 !important;
-}
-
-:root[data-theme='dark'] [class*="text-[#2d3436]"],
-:root[data-theme='dark'] [class~="text-foreground"],
-:root[data-theme='dark'] [class~="text-text-primary"] {
-  color: #e5eaf2 !important;
-}
-
-:root[data-theme='dark'] [class*="text-[#4a5568]"],
-:root[data-theme='dark'] [class~="text-muted"],
-:root[data-theme='dark'] [class~="text-muted-foreground"] {
-  color: #a8b3c4 !important;
-}
-
-:root[data-theme='dark'] [class*="border-white"] {
-  border-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-:root[data-theme='dark'] [class*="border-[#babecc]"] {
-  border-color: #374252 !important;
-}
-
-:root[data-theme='dark'] .input-recessed,
-:root[data-theme='dark'] select,
-:root[data-theme='dark'] option {
-  background-color: #171b23 !important;
-  color: #e5eaf2 !important;
-  box-shadow: inset 3px 3px 7px #11151b, inset -3px -3px 7px #27303d;
-}
-
-:root[data-theme='dark'] .input-recessed::placeholder {
-  color: #8f9bad;
-}
-
-:root[data-theme='dark'] .btn-tactile-chassis {
-  background-color: #1d232d;
-  color: #e5eaf2;
-  box-shadow: 4px 4px 10px #11151b, -4px -4px 10px #27303d;
-}
-
-:root[data-theme='dark'] .chassis-card {
-  background-color: #1d232d;
-  box-shadow: 8px 8px 16px #11151b, -8px -8px 16px #27303d;
-}
-
-:root[data-theme='dark'] [class~="shadow-card"],
-:root[data-theme='dark'] [class~="shadow-recessed"] {
-  box-shadow: 6px 6px 14px rgba(0, 0, 0, 0.25), -4px -4px 12px rgba(255, 255, 255, 0.025) !important;
-}
-
-:root[data-theme='dark'] [class~="shadow-floating"] {
-  box-shadow: 10px 10px 22px rgba(0, 0, 0, 0.3), -8px -8px 18px rgba(255, 255, 255, 0.03) !important;
-}
-
-:root[data-theme='dark'] [class~="shadow-pressed"] {
-  box-shadow: inset 5px 5px 10px #11151b, inset -5px -5px 10px #27303d !important;
-}
-
-:root[data-theme='dark'] [class*="shadow-["] {
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.28), -3px -3px 8px rgba(255, 255, 255, 0.025) !important;
-}
-
-:root[data-theme='dark'] .text-embossed {
-  text-shadow: none;
-}

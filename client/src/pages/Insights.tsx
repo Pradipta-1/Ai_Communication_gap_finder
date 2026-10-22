@@ -53,9 +53,9 @@ export const Insights: React.FC = () => {
   ];
 
   return (
-    <div className="p-6 sm:p-8 max-w-7xl mx-auto space-y-8 font-sans">
+    <div className="p-3.5 sm:p-6 md:p-8 max-w-7xl mx-auto space-y-6 sm:space-y-8 font-sans">
       {/* Header */}
-      <div className="pb-6 border-b border-[#babecc]/50">
+      <div className="pb-4 sm:pb-6 border-b border-[#babecc]/50">
         <div className="flex items-center gap-2 mb-1">
           <span className="w-2.5 h-2.5 rounded-full bg-accent shadow-glow animate-pulse" />
           <span className="font-mono text-[11px] font-bold text-accent tracking-widest uppercase">
@@ -73,7 +73,7 @@ export const Insights: React.FC = () => {
       {/* Grid: Charts (Donut + Trend) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Gap Distribution Donut (5 Cols) */}
-        <div className="lg:col-span-5 bg-[#e0e5ec] shadow-card rounded-2xl p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
+        <div className="lg:col-span-5 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
           <div className="flex items-center justify-between pb-3 border-b border-[#babecc]/40">
             <h3 className="text-sm font-bold text-foreground text-embossed uppercase tracking-wide">
               Gap Type Distribution
@@ -99,7 +99,7 @@ export const Insights: React.FC = () => {
         </div>
 
         {/* Resolution Over Time (7 Cols) */}
-        <div className="lg:col-span-7 bg-[#e0e5ec] shadow-card rounded-2xl p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
+        <div className="lg:col-span-7 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
           <div className="flex items-center justify-between pb-3 border-b border-[#babecc]/40">
             <h3 className="text-sm font-bold text-foreground text-embossed uppercase tracking-wide">
               Resolution Trajectory
@@ -122,7 +122,7 @@ export const Insights: React.FC = () => {
       {/* Participant Activity & Clarification Hotspots */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Participant Activity (6 Cols) */}
-        <div className="lg:col-span-6 bg-[#e0e5ec] shadow-card rounded-2xl p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
+        <div className="lg:col-span-6 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
           <div className="flex items-center justify-between pb-3 border-b border-[#babecc]/40">
             <h3 className="text-sm font-bold text-foreground text-embossed uppercase tracking-wide">
               Participant Activity Distribution
@@ -145,7 +145,7 @@ export const Insights: React.FC = () => {
         </div>
 
         {/* Clarification Hotspots (6 Cols) */}
-        <div className="lg:col-span-6 bg-[#e0e5ec] shadow-card rounded-2xl p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
+        <div className="lg:col-span-6 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
           <div className="flex items-center justify-between pb-3 border-b border-[#babecc]/40">
             <div className="flex items-center gap-2">
               <Flame className="w-4 h-4 text-accent" />
@@ -166,9 +166,9 @@ export const Insights: React.FC = () => {
             {hotspots.map((spot, idx) => (
               <div
                 key={idx}
-                className="p-3.5 bg-[#d1d9e6]/50 shadow-recessed rounded-xl border border-[#babecc]/40 space-y-1"
+                className="p-3 sm:p-3.5 bg-[#d1d9e6]/50 shadow-recessed rounded-xl border border-[#babecc]/40 space-y-1"
               >
-                <div className="flex items-center justify-between text-xs">
+                <div className="flex flex-wrap items-center justify-between gap-1 text-xs">
                   <span className="font-bold text-foreground">
                     {spot.topic}
                   </span>
@@ -176,7 +176,7 @@ export const Insights: React.FC = () => {
                     {spot.severity}
                   </span>
                 </div>
-                <div className="flex items-center justify-between text-[11px] font-mono text-muted">
+                <div className="flex flex-wrap items-center justify-between gap-1 text-[11px] font-mono text-muted">
                   <span>WINDOW: {spot.time}</span>
                   <span>{spot.queries} REPEATS // {spot.speaker}</span>
                 </div>
@@ -187,7 +187,7 @@ export const Insights: React.FC = () => {
       </div>
 
       {/* Frequently Unresolved Topics */}
-      <div className="bg-[#e0e5ec] shadow-card rounded-2xl p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
+      <div className="bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl p-3.5 sm:p-5 md:p-6 border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
         <div className="flex items-center justify-between pb-3 border-b border-[#babecc]/40">
           <div className="flex items-center gap-2">
             <GitBranch className="w-4 h-4 text-accent" />
@@ -204,15 +204,15 @@ export const Insights: React.FC = () => {
           {unresolvedTopics.map((topic, idx) => (
             <div
               key={idx}
-              className="p-4 bg-[#d1d9e6]/50 shadow-recessed rounded-xl border border-[#babecc]/40 space-y-2.5"
+              className="p-3 sm:p-4 bg-[#d1d9e6]/50 shadow-recessed rounded-xl border border-[#babecc]/40 space-y-2.5"
             >
-              <div className="flex items-center justify-between text-xs font-bold text-foreground">
-                <span>{topic.topic}</span>
-                <span className="text-accent text-[10px] font-mono bg-[#e0e5ec] shadow-card px-2 py-0.5 rounded border border-white/80">
+              <div className="flex flex-wrap items-center justify-between gap-1 text-xs font-bold text-foreground">
+                <span className="break-words-safe">{topic.topic}</span>
+                <span className="text-accent text-[10px] font-mono bg-[#e0e5ec] shadow-card px-2 py-0.5 rounded border border-white/80 flex-shrink-0">
                   {topic.occurrences}x DROPPED
                 </span>
               </div>
-              <div className="flex items-center justify-between text-[11px] font-mono text-muted pt-2 border-t border-[#babecc]/40">
+              <div className="flex flex-wrap items-center justify-between gap-1 text-[11px] font-mono text-muted pt-2 border-t border-[#babecc]/40">
                 <span>SPEAKER: {topic.lastSpeaker}</span>
                 <span className="text-foreground font-bold">{topic.status}</span>
               </div>

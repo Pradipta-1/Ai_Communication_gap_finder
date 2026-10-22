@@ -54,7 +54,7 @@ export const AnalysisLoader: React.FC<AnalysisLoaderProps> = ({
   const percentage = Math.min(100, Math.round((currentStage / stages.length) * 100));
 
   return (
-    <div className="relative p-6 sm:p-8 bg-[#e0e5ec] shadow-[12px_12px_24px_#babecc,-12px_-12px_24px_#ffffff] rounded-2xl border border-[#ffffff]/60 max-w-xl mx-auto overflow-hidden font-sans corner-screws">
+    <div className="relative p-4 sm:p-6 md:p-8 bg-[#e0e5ec] shadow-[12px_12px_24px_#babecc,-12px_-12px_24px_#ffffff] rounded-xl sm:rounded-2xl border border-[#ffffff]/60 max-w-xl mx-auto overflow-hidden font-sans corner-screws">
       {/* Header */}
       <div className="flex items-center justify-between pb-4 mb-5 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
         <div className="flex items-center gap-3">

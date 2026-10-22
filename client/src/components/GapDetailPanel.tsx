@@ -193,12 +193,12 @@ export const GapDetailPanel: React.FC<GapDetailPanelProps> = ({
       </div>
 
       {/* Action Buttons Footer */}
-      <div className="p-5 border-t border-[#babecc] shadow-[0_-1px_0_#ffffff] bg-[#e0e5ec] space-y-2">
-        <div className="flex items-center gap-3">
+      <div className="p-3.5 sm:p-5 border-t border-[#babecc] shadow-[0_-1px_0_#ffffff] bg-[#e0e5ec] space-y-2">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 sm:gap-3">
           {gap.status !== 'resolved' ? (
             <button
               onClick={handleResolveClick}
-              className="btn-tactile-primary flex-1 flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-mono font-bold uppercase rounded-xl"
+              className="btn-tactile-primary flex-1 flex items-center justify-center gap-1.5 py-2.5 sm:py-3 px-3 sm:px-4 text-xs font-mono font-bold uppercase rounded-xl"
             >
               <CheckCircle2 className="w-4 h-4" />
               <span>MARK RESOLVED</span>
@@ -206,28 +206,30 @@ export const GapDetailPanel: React.FC<GapDetailPanelProps> = ({
           ) : (
             <button
               onClick={() => (onReopen ? onReopen(gap.id) : onResolve(gap.id))}
-              className="btn-tactile-chassis flex-1 flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-mono font-bold uppercase rounded-xl"
+              className="btn-tactile-chassis flex-1 flex items-center justify-center gap-1.5 py-2.5 sm:py-3 px-3 sm:px-4 text-xs font-mono font-bold uppercase rounded-xl"
             >
               <RotateCcw className="w-4 h-4 text-[#d97706]" />
               <span>REOPEN THREAD</span>
             </button>
           )}
 
-          <button
-            onClick={() => onViewContext(gap.evidence[0]?.messageId)}
-            className="btn-tactile-chassis flex-1 flex items-center justify-center gap-1.5 py-3 px-4 text-xs font-mono font-bold uppercase rounded-xl"
-          >
-            <Eye className="w-4 h-4 text-[#ff4757]" />
-            <span>JUMP TO CHAT</span>
-          </button>
+          <div className="flex items-center gap-2 flex-1">
+            <button
+              onClick={() => onViewContext(gap.evidence[0]?.messageId)}
+              className="btn-tactile-chassis flex-1 flex items-center justify-center gap-1.5 py-2.5 sm:py-3 px-3 sm:px-4 text-xs font-mono font-bold uppercase rounded-xl"
+            >
+              <Eye className="w-4 h-4 text-[#ff4757]" />
+              <span>JUMP TO CHAT</span>
+            </button>
 
-          <button
-            onClick={() => onDismiss(gap.id)}
-            className="btn-tactile-chassis p-3 text-xs rounded-xl text-[#4a5568] hover:text-[#ff4757]"
-            title="Dismiss gap"
-          >
-            <Trash2 className="w-4 h-4" />
-          </button>
+            <button
+              onClick={() => onDismiss(gap.id)}
+              className="btn-tactile-chassis p-2.5 sm:p-3 text-xs rounded-xl text-[#4a5568] hover:text-[#ff4757]"
+              title="Dismiss gap"
+            >
+              <Trash2 className="w-4 h-4" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

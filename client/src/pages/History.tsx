@@ -88,9 +88,9 @@ export const History: React.FC = () => {
   }, [conversations, searchQuery, sortBy]);
 
   return (
-    <div className="p-6 sm:p-8 max-w-7xl mx-auto space-y-8 font-sans">
+    <div className="p-3.5 sm:p-6 md:p-8 max-w-7xl mx-auto space-y-5 sm:space-y-8 font-sans">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#babecc]/50">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-[#babecc]/50">
         <div>
           <div className="flex items-center gap-2 mb-1">
             <span className="w-2.5 h-2.5 rounded-full bg-accent shadow-glow animate-pulse" />
@@ -98,17 +98,17 @@ export const History: React.FC = () => {
               ARCHIVE_STORAGE // LOG_CATALOG
             </span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-foreground tracking-tight text-embossed">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-foreground tracking-tight text-embossed">
             Audit Archive
           </h1>
-          <p className="text-sm text-muted mt-1 max-w-2xl">
+          <p className="text-xs sm:text-sm text-muted mt-1 max-w-2xl">
             Inspect recorded multi-party communications, verified reasoning trails, and historical telemetry logs.
           </p>
         </div>
 
         <Link
           to="/analyze"
-          className="btn-tactile-primary flex items-center justify-center gap-2 self-start sm:self-auto"
+          className="btn-tactile-primary flex items-center justify-center gap-2 w-full sm:w-auto self-start sm:self-auto"
         >
           <Plus className="w-4 h-4 stroke-[2.5]" />
           <span>NEW ANALYSIS</span>
@@ -116,7 +116,7 @@ export const History: React.FC = () => {
       </div>
 
       {/* Search & Sort Module Controls */}
-      <div className="p-4 bg-[#e0e5ec] shadow-card rounded-xl border border-white/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="p-3 sm:p-4 bg-[#e0e5ec] shadow-card rounded-xl border border-white/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div className="relative flex h-11 flex-1 max-w-md">
           <Search className="w-4 h-4 text-muted absolute left-3.5 top-3" />
           <input

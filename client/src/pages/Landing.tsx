@@ -18,16 +18,9 @@ import {
   Sliders,
   Cpu,
   CornerDownRight,
-  Moon,
-  Sun,
 } from 'lucide-react';
 
-interface LandingProps {
-  theme: 'light' | 'dark';
-  onToggleTheme: () => void;
-}
-
-export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
+export const Landing: React.FC = () => {
   // Interactive Live Demo State
   const [demoScanning, setDemoScanning] = useState(false);
   const [demoAnalyzed, setDemoAnalyzed] = useState(false);
@@ -52,20 +45,11 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
   };
 
   return (
-    <div className="min-h-screen bg-[#e0e5ec] text-[#2d3436] font-sans selection:bg-[#ff4757] selection:text-white landing-page">
+    <div className="min-h-screen bg-[#e0e5ec] text-[#2d3436] font-sans selection:bg-[#ff4757] selection:text-white landing-page overflow-x-hidden">
       {/* Top Banner Navigation */}
-      <header className="border-b border-[#babecc] shadow-[0_1px_0_#ffffff] bg-[#e0e5ec] sticky top-0 z-30 px-6 py-4 flex items-center justify-between max-w-7xl mx-auto select-none">
+      <header className="border-b border-[#babecc] shadow-[0_1px_0_#ffffff] bg-[#e0e5ec] sticky top-0 z-30 px-3.5 sm:px-6 py-3 sm:py-4 flex items-center justify-between max-w-7xl mx-auto select-none">
         <Logo size="md" showTagline={true} />
-        <div className="flex items-center gap-6">
-          <button
-            type="button"
-            onClick={onToggleTheme}
-            className="p-2 text-[#2d3436] rounded-lg bg-[#e0e5ec] shadow-[3px_3px_6px_#babecc,-3px_-3px_6px_#ffffff] active:shadow-[inset_2px_2px_4px_#babecc,inset_-2px_-2px_4px_#ffffff] transition-colors"
-            aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-            title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-          >
-            {theme === 'light' ? <Moon className="w-4 h-4" /> : <Sun className="w-4 h-4" />}
-          </button>
+        <div className="flex items-center gap-3 sm:gap-6">
           <Link
             to="/how-it-works"
             className="text-xs font-mono font-bold uppercase text-[#4a5568] hover:text-[#ff4757] hidden sm:inline-block transition-colors text-embossed"
@@ -80,7 +64,7 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
           </Link>
           <Link
             to="/analyze"
-            className="btn-tactile-primary inline-flex items-center gap-2 px-4 py-2 text-xs font-mono font-bold uppercase rounded-lg active:translate-y-[2px]"
+            className="btn-tactile-primary inline-flex items-center gap-2 px-3 sm:px-4 py-2 text-[11px] sm:text-xs font-mono font-bold uppercase rounded-lg active:translate-y-[2px]"
           >
             <span>LAUNCH CONSOLE</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -89,31 +73,31 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative px-6 pt-16 pb-20 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section className="relative px-3.5 sm:px-6 pt-8 sm:pt-16 pb-12 sm:pb-20 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Hero Content */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
             {/* LED Status Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#e0e5ec] shadow-[inset_2px_2px_4px_#babecc,inset_-2px_-2px_4px_#ffffff] border border-[#ffffff]/60 text-[#4a5568] text-xs font-mono font-bold uppercase">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#22c55e] shadow-[0_0_8px_#22c55e] animate-pulse" />
-              <span>SERIES 01 // PRECISION CONVERSATION INSPECTION</span>
+            <div className="inline-flex items-center gap-2 sm:gap-2.5 px-2.5 sm:px-3.5 py-1.5 rounded-full bg-[#e0e5ec] shadow-[inset_2px_2px_4px_#babecc,inset_-2px_-2px_4px_#ffffff] border border-[#ffffff]/60 text-[#4a5568] text-[10px] sm:text-xs font-mono font-bold uppercase max-w-full">
+              <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#22c55e] shadow-[0_0_8px_#22c55e] animate-pulse flex-shrink-0" />
+              <span className="truncate break-words-safe">SERIES 01 // PRECISION CONVERSATION INSPECTION</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#2d3436] text-embossed leading-[1.1]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#2d3436] text-embossed leading-[1.15]">
               See what the <br />
               <span className="text-[#ff4757] underline decoration-[#ff4757]/30 decoration-wavy">
                 conversation missed.
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#4a5568] leading-relaxed max-w-xl font-medium">
+            <p className="text-sm sm:text-lg text-[#4a5568] leading-relaxed max-w-xl font-medium">
               GapLens brings industrial diagnostic precision to human dialogue. Detect unanswered questions, stalled commitments, and conversational bottlenecks with verifiable quoted evidence.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
               <Link
                 to="/analyze"
-                className="btn-tactile-primary inline-flex items-center gap-2.5 px-6 py-3.5 text-xs font-mono font-bold uppercase tracking-wider rounded-xl active:translate-y-[2px]"
+                className="btn-tactile-primary inline-flex items-center justify-center gap-2.5 px-6 py-3 sm:py-3.5 text-xs font-mono font-bold uppercase tracking-wider rounded-xl active:translate-y-[2px]"
               >
                 <span>ANALYZE A CONVERSATION</span>
                 <ArrowRight className="w-4 h-4 stroke-[2.5]" />
@@ -124,14 +108,14 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
                   const demoEl = document.getElementById('live-demo-section');
                   if (demoEl) demoEl.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="btn-tactile-chassis inline-flex items-center gap-2 px-5 py-3.5 text-xs font-mono font-bold uppercase tracking-wider rounded-xl border border-[#ffffff]/60"
+                className="btn-tactile-chassis inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-3.5 text-xs font-mono font-bold uppercase tracking-wider rounded-xl border border-[#ffffff]/60"
               >
                 <Play className="w-4 h-4 text-[#ff4757]" />
                 <span>SEE HARDWARE DEMO</span>
               </button>
             </div>
 
-            <div className="flex flex-wrap items-center gap-6 pt-4 text-xs font-mono text-[#4a5568]">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 pt-2 sm:pt-4 text-xs font-mono text-[#4a5568]">
               <div className="flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-[#16a34a] shadow-[0_0_6px_#16a34a]" />
                 <span className="font-bold uppercase text-embossed">Server-Side API Keys</span>
@@ -144,9 +128,9 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
           </div>
 
           {/* Right Hero: Signature 3D "Device" Visualization in Pure CSS */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative mt-4 lg:mt-0">
             {/* Outer Machine Bezel */}
-            <div className="relative bg-[#e0e5ec] shadow-[16px_16px_32px_#babecc,-16px_-16px_32px_#ffffff] rounded-2xl p-5 border border-[#ffffff]/80 corner-screws">
+            <div className="relative bg-[#e0e5ec] shadow-[16px_16px_32px_#babecc,-16px_-16px_32px_#ffffff] rounded-2xl p-3.5 sm:p-5 border border-[#ffffff]/80 corner-screws">
               {/* Top hardware bar with Vent slots & Power LED */}
               <div className="flex items-center justify-between pb-3 border-b border-[#babecc] shadow-[0_1px_0_#ffffff] text-xs font-mono">
                 <div className="flex items-center gap-2">
@@ -213,21 +197,21 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
       </section>
 
       {/* Section: The Failure Modes */}
-      <section className="px-6 py-20 border-y border-[#babecc] shadow-[inset_0_1px_0_#ffffff,inset_0_-1px_0_#babecc] bg-[#e0e5ec]">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-3">
+      <section className="px-3.5 sm:px-6 py-10 sm:py-20 border-y border-[#babecc] shadow-[inset_0_1px_0_#ffffff,inset_0_-1px_0_#babecc] bg-[#e0e5ec]">
+        <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12">
+          <div className="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#ff4757] text-embossed">
               // FAILURE MODE TAXONOMY
             </span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2d3436] text-embossed">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2d3436] text-embossed">
               Four Critical Communication Breakdowns
             </h2>
-            <p className="text-sm font-mono text-[#4a5568] leading-relaxed">
+            <p className="text-xs sm:text-sm font-mono text-[#4a5568] leading-relaxed">
               Engineered to pinpoint structural conversational degradation rather than subjective tone.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               {
                 title: 'Unanswered Questions',
@@ -258,7 +242,7 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
               return (
                 <div
                   key={idx}
-                  className="p-6 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#babecc,-12px_-12px_24px_#ffffff] rounded-2xl transition-all space-y-4 corner-screws border border-[#ffffff]/40 group"
+                  className="p-4 sm:p-6 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#babecc,-12px_-12px_24px_#ffffff] rounded-2xl transition-all space-y-3 sm:space-y-4 corner-screws border border-[#ffffff]/40 group"
                 >
                   <div
                     className="w-10 h-10 rounded-xl bg-[#e0e5ec] shadow-[3px_3px_6px_#babecc,-3px_-3px_6px_#ffffff] border border-[#ffffff]/60 flex items-center justify-center transition-transform group-hover:scale-110"
@@ -266,7 +250,7 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
                   >
                     <Icon className="w-5 h-5" />
                   </div>
-                  <h3 className="text-base font-mono font-bold uppercase text-[#2d3436] text-embossed">
+                  <h3 className="text-sm sm:text-base font-mono font-bold uppercase text-[#2d3436] text-embossed">
                     {card.title}
                   </h3>
                   <p className="text-xs font-mono text-[#4a5568] leading-relaxed">
@@ -280,15 +264,15 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
       </section>
 
       {/* Section: Physical Step Pipeline with Cylindrical Connector Pipe */}
-      <section className="px-6 py-24 max-w-7xl mx-auto space-y-16">
-        <div className="text-center max-w-2xl mx-auto space-y-3">
+      <section className="px-3.5 sm:px-6 py-12 sm:py-24 max-w-7xl mx-auto space-y-10 sm:space-y-16">
+        <div className="text-center max-w-2xl mx-auto space-y-2 sm:space-y-3">
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#ff4757] text-embossed">
             // SCHEMATIC WORKFLOW
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2d3436] text-embossed">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2d3436] text-embossed">
             Three Physical Stages of Detection
           </h2>
-          <p className="text-sm font-mono text-[#4a5568] leading-relaxed">
+          <p className="text-xs sm:text-sm font-mono text-[#4a5568] leading-relaxed">
             From raw input text to verifiable evidence quote nodes.
           </p>
         </div>
@@ -298,7 +282,7 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
           {/* Physical Pipe behind the cards */}
           <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 connector-pipe hidden md:block z-0" />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 relative z-10">
             {[
               {
                 step: '01',
@@ -323,18 +307,18 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
               return (
                 <div
                   key={idx}
-                  className="p-6 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] rounded-2xl border border-[#ffffff]/60 space-y-4 corner-screws"
+                  className="p-4 sm:p-6 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] rounded-2xl border border-[#ffffff]/60 space-y-3 sm:space-y-4 corner-screws"
                 >
                   <div className="flex items-center justify-between font-mono">
-                    <span className="text-2xl font-extrabold text-[#ff4757] text-embossed">
+                    <span className="text-xl sm:text-2xl font-extrabold text-[#ff4757] text-embossed">
                       {item.step}
                     </span>
-                    <div className="p-2.5 rounded-xl bg-[#e0e5ec] shadow-[2px_2px_4px_#babecc,-2px_-2px_4px_#ffffff] text-[#ff4757]">
+                    <div className="p-2 sm:p-2.5 rounded-xl bg-[#e0e5ec] shadow-[2px_2px_4px_#babecc,-2px_-2px_4px_#ffffff] text-[#ff4757]">
                       <Icon className="w-5 h-5" />
                     </div>
                   </div>
 
-                  <h3 className="text-base font-mono font-bold uppercase text-[#2d3436] text-embossed">
+                  <h3 className="text-sm sm:text-base font-mono font-bold uppercase text-[#2d3436] text-embossed">
                     {item.title}
                   </h3>
                   <p className="text-xs font-mono text-[#4a5568] leading-relaxed">
@@ -348,21 +332,21 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
       </section>
 
       {/* Section: Interactive Live Demo */}
-      <section id="live-demo-section" className="px-6 py-20 border-t border-[#babecc] shadow-[inset_0_1px_0_#ffffff] bg-[#e0e5ec]">
-        <div className="max-w-4xl mx-auto space-y-8">
-          <div className="text-center space-y-3">
+      <section id="live-demo-section" className="px-3.5 sm:px-6 py-10 sm:py-20 border-t border-[#babecc] shadow-[inset_0_1px_0_#ffffff] bg-[#e0e5ec]">
+        <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+          <div className="text-center space-y-2 sm:space-y-3">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#ff4757] text-embossed">
               // INTERACTIVE BENCH TEST
             </span>
-            <h2 className="text-3xl font-extrabold text-[#2d3436] text-embossed">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#2d3436] text-embossed">
               Hardware Console Demo
             </h2>
-            <p className="text-sm font-mono text-[#4a5568]">
+            <p className="text-xs sm:text-sm font-mono text-[#4a5568]">
               Trigger an automated AI scan across this unmoderated morning sync scenario.
             </p>
           </div>
 
-          <div className="p-6 sm:p-8 bg-[#e0e5ec] shadow-[12px_12px_24px_#babecc,-12px_-12px_24px_#ffffff] rounded-2xl corner-screws border border-[#ffffff]/60 space-y-6">
+          <div className="p-4 sm:p-6 md:p-8 bg-[#e0e5ec] shadow-[12px_12px_24px_#babecc,-12px_-12px_24px_#ffffff] rounded-2xl corner-screws border border-[#ffffff]/60 space-y-4 sm:space-y-6">
             {/* Header */}
             <div className="flex flex-wrap items-center justify-between gap-4 pb-4 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
               <div>
@@ -396,7 +380,7 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
               ].map((msg, idx) => (
                 <div
                   key={idx}
-                  className={`p-3.5 rounded-xl border transition-all duration-200 ${
+                  className={`p-3 sm:p-3.5 rounded-xl border transition-all duration-200 ${
                     demoAnalyzed && msg.gapCandidate
                       ? 'border-[#ff4757]/80 bg-[#e0e5ec] shadow-[inset_3px_3px_6px_#babecc,inset_-3px_-3px_6px_#ffffff]'
                       : 'border-[#ffffff]/50 bg-[#e0e5ec] shadow-[3px_3px_6px_#babecc,-3px_-3px_6px_#ffffff]'
@@ -406,15 +390,15 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
                     <span className="uppercase text-[#2d3436]">{msg.speaker}</span>
                     <span>[{msg.time}]</span>
                   </div>
-                  <p className="text-[#2d3436] font-medium">{msg.text}</p>
+                  <p className="text-[#2d3436] font-medium break-words-safe">{msg.text}</p>
                 </div>
               ))}
             </div>
 
             {/* Result Card Revealed After Analysis */}
             {demoAnalyzed && (
-              <div className="p-5 rounded-2xl bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#babecc,inset_-4px_-4px_8px_#ffffff] border border-[#ff4757]/40 space-y-4 animate-in fade-in duration-300 font-mono">
-                <div className="flex items-center justify-between">
+              <div className="p-4 sm:p-5 rounded-2xl bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#babecc,inset_-4px_-4px_8px_#ffffff] border border-[#ff4757]/40 space-y-4 animate-in fade-in duration-300 font-mono">
+                <div className="flex flex-wrap items-center justify-between gap-2">
                   <div className="flex items-center gap-2">
                     <GapBadge type="repeated_clarification" size="md" />
                     <span className="text-xs font-bold uppercase text-[#ff4757]">
@@ -453,17 +437,17 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 py-20 max-w-5xl mx-auto text-center space-y-6">
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-[#2d3436] text-embossed">
+      <section className="px-3.5 sm:px-6 py-12 sm:py-20 max-w-5xl mx-auto text-center space-y-4 sm:space-y-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#2d3436] text-embossed">
           Calibrate Your Team's Communication.
         </h2>
-        <p className="text-sm font-mono text-[#4a5568] max-w-xl mx-auto leading-relaxed">
+        <p className="text-xs sm:text-sm font-mono text-[#4a5568] max-w-xl mx-auto leading-relaxed">
           Zero sign up required. Execute your first diagnostic scan in seconds with 100% in-browser security.
         </p>
         <div>
           <Link
             to="/analyze"
-            className="btn-tactile-primary inline-flex items-center gap-2 px-7 py-3.5 text-xs font-mono font-bold uppercase rounded-xl active:translate-y-[2px]"
+            className="btn-tactile-primary inline-flex items-center gap-2 px-5 sm:px-7 py-3 sm:py-3.5 text-xs font-mono font-bold uppercase rounded-xl active:translate-y-[2px]"
           >
             <span>LAUNCH DIAGNOSTIC SCAN</span>
             <ArrowRight className="w-4 h-4 stroke-[2.5]" />
@@ -472,11 +456,11 @@ export const Landing: React.FC<LandingProps> = ({ theme, onToggleTheme }) => {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-[#babecc] shadow-[0_1px_0_#ffffff] bg-[#e0e5ec] py-10 px-6 text-xs font-mono text-[#4a5568]">
+      <footer className="border-t border-[#babecc] shadow-[0_1px_0_#ffffff] bg-[#e0e5ec] py-8 sm:py-10 px-4 sm:px-6 text-xs font-mono text-[#4a5568]">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
           <Logo size="sm" showTagline={true} />
 
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
             <Link to="/how-it-works" className="hover:text-[#ff4757]">SCHEMATICS</Link>
             <Link to="/history" className="hover:text-[#ff4757]">ARCHIVE</Link>
             <Link to="/settings" className="hover:text-[#ff4757]">CALIBRATE</Link>

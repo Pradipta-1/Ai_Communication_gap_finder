@@ -39,11 +39,11 @@ export const Dashboard: React.FC = () => {
     : 85;
 
   return (
-    <div className="p-6 sm:p-8 space-y-8 max-w-7xl mx-auto font-sans">
+    <div className="p-3.5 sm:p-6 md:p-8 space-y-5 sm:space-y-8 max-w-7xl mx-auto font-sans">
       {/* Top Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-mono font-extrabold uppercase text-[#2d3436] text-embossed tracking-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-mono font-extrabold uppercase text-[#2d3436] text-embossed tracking-tight">
             TELEMETRY DASHBOARD
           </h1>
           <p className="text-xs font-mono text-[#4a5568] mt-1">
@@ -53,7 +53,7 @@ export const Dashboard: React.FC = () => {
 
         <Link
           to="/analyze"
-          className="btn-tactile-primary inline-flex items-center gap-2 px-5 py-2.5 text-xs font-mono font-bold uppercase rounded-xl active:translate-y-[2px]"
+          className="btn-tactile-primary inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 text-xs font-mono font-bold uppercase rounded-xl active:translate-y-[2px] w-full sm:w-auto"
         >
           <Plus className="w-4 h-4 stroke-[2.5]" />
           <span>NEW SCAN</span>
@@ -61,7 +61,7 @@ export const Dashboard: React.FC = () => {
       </div>
 
       {/* Stats Cards Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
         <StatsCard
           label="CONVERSATIONS ANALYZED"
           value={conversations.length}
@@ -98,9 +98,9 @@ export const Dashboard: React.FC = () => {
       </div>
 
       {/* Quick Launch & Recent Activity */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
         {/* Recent Analyzed Conversations (8 Cols) */}
-        <div className="lg:col-span-8 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] p-6 rounded-2xl corner-screws border border-[#ffffff]/40 space-y-4 font-mono">
+        <div className="lg:col-span-8 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] p-3.5 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl corner-screws border border-[#ffffff]/40 space-y-4 font-mono">
           <div className="flex items-center justify-between pb-3 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
             <div className="flex items-center gap-2">
               <Clock className="w-4 h-4 text-[#ff4757]" />
@@ -135,7 +135,7 @@ export const Dashboard: React.FC = () => {
               {conversations.slice(0, 4).map(item => (
                 <div
                   key={item.id}
-                  className="p-4 rounded-xl bg-[#e0e5ec] shadow-[4px_4px_8px_#babecc,-4px_-4px_8px_#ffffff] hover:shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] border border-[#ffffff]/50 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 group"
+                  className="p-3 sm:p-4 rounded-xl bg-[#e0e5ec] shadow-[4px_4px_8px_#babecc,-4px_-4px_8px_#ffffff] hover:shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] border border-[#ffffff]/50 transition-all flex flex-col sm:flex-row sm:items-center justify-between gap-3 group"
                 >
                   <div className="space-y-1">
                     <div className="flex items-center gap-2.5">
@@ -189,7 +189,7 @@ export const Dashboard: React.FC = () => {
 
         {/* Quick Launch Demos & Health Advisor (4 Cols) */}
         <div className="lg:col-span-4 space-y-5">
-          <div className="bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] p-6 rounded-2xl corner-screws border border-[#ffffff]/40 space-y-4 font-mono">
+          <div className="bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] p-3.5 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl corner-screws border border-[#ffffff]/40 space-y-4 font-mono">
             <div className="flex items-center gap-2 pb-3 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
               <Zap className="w-4 h-4 text-[#ff4757]" />
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#2d3436] text-embossed">

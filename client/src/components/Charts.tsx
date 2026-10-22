@@ -21,7 +21,7 @@ interface GapDistributionProps {
 
 export const GapDistributionChart: React.FC<GapDistributionProps> = ({ data }) => {
   return (
-    <div className="h-64 w-full">
+    <div className="h-64 w-full min-w-0">
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Tooltip
@@ -61,7 +61,7 @@ interface ActivityChartProps {
 
 export const ParticipantActivityChart: React.FC<ActivityChartProps> = ({ data }) => {
   return (
-    <div className="h-64 w-full">
+    <div className="h-64 w-full min-w-0">
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#d1d9e6" />
@@ -93,7 +93,7 @@ interface ResolutionTrendProps {
 
 export const ResolutionTrendChart: React.FC<ResolutionTrendProps> = ({ data }) => {
   return (
-    <div className="h-64 w-full">
+    <div className="h-64 w-full min-w-0">
       <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="#d1d9e6" />

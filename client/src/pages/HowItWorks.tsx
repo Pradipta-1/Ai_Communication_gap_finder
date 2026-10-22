@@ -115,9 +115,9 @@ export const HowItWorks: React.FC = () => {
   const current = rulesData[selectedRule];
 
   return (
-    <div className="p-6 sm:p-8 max-w-7xl mx-auto space-y-10 font-sans">
+    <div className="p-3.5 sm:p-6 md:p-8 max-w-7xl mx-auto space-y-6 sm:space-y-10 font-sans">
       {/* Header */}
-      <div className="pb-6 border-b border-[#babecc]/50">
+      <div className="pb-4 sm:pb-6 border-b border-[#babecc]/50">
         <div className="flex items-center gap-2 mb-1">
           <span className="w-2.5 h-2.5 rounded-full bg-accent shadow-glow animate-pulse" />
           <span className="font-mono text-[11px] font-bold text-accent tracking-widest uppercase">
@@ -133,13 +133,13 @@ export const HowItWorks: React.FC = () => {
       </div>
 
       {/* Interactive Rule Explorer Tabs */}
-      <div className="space-y-6">
-        <div className="flex flex-wrap gap-2.5 pb-2">
+      <div className="space-y-4 sm:space-y-6">
+        <div className="flex flex-wrap gap-2 pb-1">
           {(Object.keys(rulesData) as GapType[]).map(key => (
             <button
               key={key}
               onClick={() => setSelectedRule(key)}
-              className={`px-4 py-2.5 text-xs font-mono font-bold rounded-lg transition-all duration-150 ${
+              className={`px-3 sm:px-4 py-2 sm:py-2.5 text-[11px] sm:text-xs font-mono font-bold rounded-lg transition-all duration-150 ${
                 selectedRule === key
                   ? 'bg-[#e0e5ec] text-accent shadow-pressed border-2 border-accent'
                   : 'bg-[#e0e5ec] text-muted hover:text-foreground shadow-card border border-white/60 active:shadow-pressed'
@@ -151,7 +151,7 @@ export const HowItWorks: React.FC = () => {
         </div>
 
         {/* Selected Rule Deep Dive */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-[#e0e5ec] shadow-card rounded-2xl p-6 sm:p-8 border border-white/60 corner-screws relative overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 border border-white/60 corner-screws relative overflow-hidden">
           {/* Left Details (7 Cols) */}
           <div className="lg:col-span-7 space-y-5">
             <div className="flex items-center gap-3">
@@ -175,7 +175,7 @@ export const HowItWorks: React.FC = () => {
               </ul>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-[#babecc]/40 text-xs font-mono">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-4 border-t border-[#babecc]/40 text-xs font-mono">
               <div className="p-3 bg-[#d1d9e6]/50 shadow-recessed rounded-xl border border-[#babecc]/40">
                 <span className="text-muted block font-bold uppercase">
                   TARGET CONFIDENCE
@@ -231,7 +231,7 @@ export const HowItWorks: React.FC = () => {
       </div>
 
       {/* The Evidence-First Philosophy */}
-      <div className="p-6 bg-[#e0e5ec] shadow-card rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
+      <div className="p-4 sm:p-6 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
         <div className="flex items-center gap-2 text-accent font-bold text-sm font-mono uppercase tracking-wider">
           <ShieldCheck className="w-5 h-5 text-accent" />
           <span>ZERO-HALLUCINATION GUARANTEE</span>

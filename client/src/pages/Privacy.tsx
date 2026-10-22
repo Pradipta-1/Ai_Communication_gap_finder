@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 export const Privacy: React.FC = () => {
   return (
-    <div className="p-6 sm:p-8 max-w-4xl mx-auto space-y-8 font-sans">
-      <div className="pb-6 border-b border-[#babecc]/50">
+    <div className="p-3.5 sm:p-6 md:p-8 max-w-4xl mx-auto space-y-6 sm:space-y-8 font-sans">
+      <div className="pb-4 sm:pb-6 border-b border-[#babecc]/50">
         <div className="flex items-center gap-2 mb-1">
           <span className="w-2.5 h-2.5 rounded-full bg-accent shadow-glow animate-pulse" />
           <span className="font-mono text-[11px] font-bold text-accent tracking-widest uppercase">
@@ -20,9 +20,9 @@ export const Privacy: React.FC = () => {
         </p>
       </div>
 
-      <div className="space-y-6 text-sm text-foreground leading-relaxed">
+      <div className="space-y-4 sm:space-y-6 text-sm text-foreground leading-relaxed">
         {/* Section 1 */}
-        <div className="p-6 bg-[#e0e5ec] shadow-card rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
+        <div className="p-4 sm:p-6 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
           <div className="flex items-center gap-2.5 text-foreground font-bold text-base font-mono uppercase">
             <Lock className="w-5 h-5 text-accent" />
             <span>1. What Data Is Processed</span>
@@ -33,7 +33,7 @@ export const Privacy: React.FC = () => {
         </div>
 
         {/* Section 2 */}
-        <div className="p-6 bg-[#e0e5ec] shadow-card rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
+        <div className="p-4 sm:p-6 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
           <div className="flex items-center gap-2.5 text-foreground font-bold text-base font-mono uppercase">
             <EyeOff className="w-5 h-5 text-accent" />
             <span>2. Zero Persistent Retention By Default</span>
@@ -44,7 +44,7 @@ export const Privacy: React.FC = () => {
         </div>
 
         {/* Section 3 */}
-        <div className="p-6 bg-[#e0e5ec] shadow-card rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
+        <div className="p-4 sm:p-6 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
           <div className="flex items-center gap-2.5 text-foreground font-bold text-base font-mono uppercase">
             <Cpu className="w-5 h-5 text-accent" />
             <span>3. How AI Processing Operates</span>
@@ -55,7 +55,7 @@ export const Privacy: React.FC = () => {
         </div>
 
         {/* Section 4 */}
-        <div className="p-6 bg-[#e0e5ec] shadow-card rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
+        <div className="p-4 sm:p-6 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl border border-white/60 space-y-3 corner-screws-sm relative overflow-hidden">
           <div className="flex items-center gap-2.5 text-foreground font-bold text-base font-mono uppercase">
             <Trash2 className="w-5 h-5 text-accent" />
             <span>4. Complete User Deletion Rights</span>
@@ -66,10 +66,10 @@ export const Privacy: React.FC = () => {
         </div>
       </div>
 
-      <div className="pt-4 flex items-center justify-between border-t border-[#babecc]/50">
+      <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-t border-[#babecc]/50">
         <Link
           to="/analyze"
-          className="btn-tactile-chassis inline-flex items-center gap-2 text-xs font-mono font-bold"
+          className="btn-tactile-chassis inline-flex items-center gap-2 text-xs font-mono font-bold w-full sm:w-auto justify-center"
         >
           <ArrowLeft className="w-4 h-4 text-accent" />
           <span>RETURN TO ANALYZER</span>

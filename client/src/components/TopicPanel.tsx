@@ -14,8 +14,8 @@ export const TopicPanel: React.FC<TopicPanelProps> = ({
   onSelectTopic,
 }) => {
   return (
-    <div className="relative p-6 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] rounded-2xl corner-screws border border-[#ffffff]/40 space-y-4 font-sans">
-      <div className="flex items-center justify-between pb-3 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
+    <div className="relative p-3.5 sm:p-5 md:p-6 bg-[#e0e5ec] shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] sm:shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] rounded-xl sm:rounded-2xl corner-screws border border-[#ffffff]/40 space-y-3 sm:space-y-4 font-sans">
+      <div className="flex items-center justify-between pb-2.5 sm:pb-3 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
         <div className="flex items-center gap-2">
           <Layers className="w-4 h-4 text-[#ff4757]" />
           <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-[#2d3436] text-embossed">
@@ -32,7 +32,7 @@ export const TopicPanel: React.FC<TopicPanelProps> = ({
         )}
       </div>
 
-      <div className="space-y-3.5">
+      <div className="space-y-2.5 sm:space-y-3.5">
         {topics.map(topic => {
           const isSelected = selectedTopic === topic.name;
 
@@ -40,15 +40,15 @@ export const TopicPanel: React.FC<TopicPanelProps> = ({
             <div
               key={topic.name}
               onClick={() => onSelectTopic(isSelected ? null : topic.name)}
-              className={`p-4 rounded-xl cursor-pointer transition-all duration-150 group border ${
+              className={`p-2.5 sm:p-4 rounded-lg sm:rounded-xl cursor-pointer transition-all duration-150 group border ${
                 isSelected
-                  ? 'bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#babecc,inset_-4px_-4px_8px_#ffffff] border-[#ff4757]/60'
-                  : 'bg-[#e0e5ec] shadow-[4px_4px_8px_#babecc,-4px_-4px_8px_#ffffff] border-[#ffffff]/50 hover:shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff]'
+                  ? 'bg-[#e0e5ec] shadow-[inset_3px_3px_6px_#babecc,inset_-3px_-3px_6px_#ffffff] sm:shadow-[inset_4px_4px_8px_#babecc,inset_-4px_-4px_8px_#ffffff] border-[#ff4757]/60'
+                  : 'bg-[#e0e5ec] shadow-[3px_3px_6px_#babecc,-3px_-3px_6px_#ffffff] sm:shadow-[4px_4px_8px_#babecc,-4px_-4px_8px_#ffffff] border-[#ffffff]/50 hover:shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff]'
               }`}
             >
               {/* Header: Name + Percentage */}
               <div className="flex items-center justify-between text-xs mb-2 font-mono">
-                <span className="font-bold text-[#2d3436] truncate max-w-[200px] uppercase text-embossed">
+                <span className="font-bold text-[#2d3436] truncate max-w-[140px] sm:max-w-[200px] uppercase text-embossed">
                   {topic.name}
                 </span>
                 <span className="text-[#ff4757] font-extrabold">

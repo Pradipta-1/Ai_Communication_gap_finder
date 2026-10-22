@@ -116,11 +116,11 @@ export const Analyze: React.FC = () => {
   };
 
   return (
-    <div className="p-6 sm:p-8 max-w-7xl mx-auto space-y-8 font-sans">
+    <div className="p-3.5 sm:p-6 md:p-8 max-w-7xl mx-auto space-y-5 sm:space-y-8 font-sans">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-mono font-extrabold uppercase text-[#2d3436] text-embossed tracking-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-mono font-extrabold uppercase text-[#2d3436] text-embossed tracking-tight">
             DATA INGESTION PIPELINE
           </h1>
           <p className="text-xs font-mono text-[#4a5568] mt-1">
@@ -130,7 +130,7 @@ export const Analyze: React.FC = () => {
       </div>
 
       {errorMsg && (
-        <div className="p-4 rounded-xl bg-[#e0e5ec] shadow-[inset_3px_3px_6px_#babecc,inset_-3px_-3px_6px_#ffffff] border border-[#ff4757]/40 text-[#ff4757] text-xs font-mono font-bold flex items-center gap-2.5">
+        <div className="p-3.5 sm:p-4 rounded-xl bg-[#e0e5ec] shadow-[inset_3px_3px_6px_#babecc,inset_-3px_-3px_6px_#ffffff] border border-[#ff4757]/40 text-[#ff4757] text-xs font-mono font-bold flex items-center gap-2.5">
           <AlertCircle className="w-5 h-5 flex-shrink-0" />
           <span>{errorMsg}</span>
         </div>
@@ -143,11 +143,11 @@ export const Analyze: React.FC = () => {
         </div>
       ) : (
         /* Two Column Layout */
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
           {/* Left Column: Input Options & Textarea (7 Cols) */}
-          <div className="lg:col-span-7 space-y-5">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5">
             {/* Input Method Tabs */}
-            <div className="flex items-center gap-3 border-b border-[#babecc] shadow-[0_1px_0_#ffffff] pb-3">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 border-b border-[#babecc] shadow-[0_1px_0_#ffffff] pb-3">
               <button
                 onClick={() => setActiveTab('paste')}
                 className={`px-4 py-2 text-xs font-mono font-bold uppercase rounded-lg transition-all ${
@@ -331,7 +331,7 @@ export const Analyze: React.FC = () => {
           </div>
 
           {/* Right Column: Configuration & Trigger (5 Cols) */}
-          <div className="lg:col-span-5 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] p-6 rounded-2xl corner-screws border border-[#ffffff]/40 space-y-6 font-mono">
+          <div className="lg:col-span-5 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] p-3.5 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl corner-screws border border-[#ffffff]/40 space-y-4 sm:space-y-6 font-mono">
             <div className="flex items-center gap-2 pb-3 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
               <Sliders className="w-4 h-4 text-[#ff4757]" />
               <h3 className="text-xs font-bold uppercase tracking-wider text-[#2d3436] text-embossed">

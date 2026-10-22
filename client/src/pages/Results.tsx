@@ -193,11 +193,11 @@ export const Results: React.FC = () => {
   const openGapsCount = analysis.communicationGaps.filter(g => g.status === 'unresolved').length;
 
   return (
-    <div className="p-6 sm:p-8 max-w-7xl mx-auto space-y-8 font-sans">
+    <div className="p-3.5 sm:p-6 md:p-8 max-w-7xl mx-auto space-y-5 sm:space-y-8 font-sans">
       {/* Top Header Bar */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4 pb-4 sm:pb-6 border-b border-[#babecc] shadow-[0_1px_0_#ffffff]">
         <div className="space-y-1.5 font-mono">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Link
               to="/history"
               className="text-[#4a5568] hover:text-[#ff4757] text-xs flex items-center gap-1 font-bold uppercase"
@@ -211,11 +211,11 @@ export const Results: React.FC = () => {
             </span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl font-extrabold uppercase text-[#2d3436] text-embossed tracking-tight">
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase text-[#2d3436] text-embossed tracking-tight">
             {analysis.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-xs text-[#4a5568] pt-1">
+          <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs text-[#4a5568] pt-1">
             <span className="flex items-center gap-1.5 font-bold">
               <Calendar className="w-3.5 h-3.5 text-[#ff4757]" />
               [{new Date(analysis.createdAt).toLocaleDateString()}]
@@ -232,7 +232,7 @@ export const Results: React.FC = () => {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setShowExportModal(true)}
-            className="btn-tactile-chassis inline-flex items-center gap-2 px-5 py-2.5 text-xs font-mono font-bold uppercase rounded-xl border border-[#ffffff]/60"
+            className="btn-tactile-chassis inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 text-xs font-mono font-bold uppercase rounded-xl border border-[#ffffff]/60 w-full sm:w-auto"
           >
             <Download className="w-3.5 h-3.5 text-[#ff4757]" />
             <span>EXPORT SCHEMATICS</span>
@@ -250,66 +250,66 @@ export const Results: React.FC = () => {
         </div>
 
         {/* Communication Metrics Cards (8 Cols) */}
-        <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-4 font-mono">
-          <div className="p-4 bg-[#e0e5ec] shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-1">
-            <span className="text-[10px] uppercase font-bold text-[#4a5568] block">
+        <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-2.5 sm:gap-4 font-mono">
+          <div className="p-2.5 sm:p-4 bg-[#e0e5ec] shadow-[4px_4px_8px_#babecc,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-0.5 sm:space-y-1">
+            <span className="text-[9px] sm:text-[10px] uppercase font-bold text-[#4a5568] block">
               MESSAGES ANALYZED
             </span>
-            <span className="text-2xl font-extrabold text-[#2d3436] text-embossed">
+            <span className="text-xl sm:text-2xl font-extrabold text-[#2d3436] text-embossed">
               {analysis.messagesAnalyzed}
             </span>
-            <span className="text-[10px] text-[#4a5568] block">
+            <span className="text-[9px] sm:text-[10px] text-[#4a5568] block">
               COMPLETE TRANSCRIPT
             </span>
           </div>
 
-          <div className="p-4 bg-[#e0e5ec] shadow-[inset_3px_3px_6px_#babecc,inset_-3px_-3px_6px_#ffffff] rounded-xl border border-[#ff4757]/30 space-y-1">
-            <span className="text-[10px] uppercase font-bold text-[#ff4757] block">
+          <div className="p-2.5 sm:p-4 bg-[#e0e5ec] shadow-[inset_2px_2px_4px_#babecc,inset_-2px_-2px_4px_#ffffff] sm:shadow-[inset_3px_3px_6px_#babecc,inset_-3px_-3px_6px_#ffffff] rounded-xl border border-[#ff4757]/30 space-y-0.5 sm:space-y-1">
+            <span className="text-[9px] sm:text-[10px] uppercase font-bold text-[#ff4757] block">
               OPEN GAPS
             </span>
-            <span className="text-2xl font-extrabold text-[#ff4757]">
+            <span className="text-xl sm:text-2xl font-extrabold text-[#ff4757]">
               {openGapsCount}
             </span>
-            <span className="text-[10px] text-[#4a5568] block">
+            <span className="text-[9px] sm:text-[10px] text-[#4a5568] block">
               REQUIRE RESOLUTION
             </span>
           </div>
 
-          <div className="p-4 bg-[#e0e5ec] shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-1">
-            <span className="text-[10px] uppercase font-bold text-[#16a34a] block">
+          <div className="p-2.5 sm:p-4 bg-[#e0e5ec] shadow-[4px_4px_8px_#babecc,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-0.5 sm:space-y-1">
+            <span className="text-[9px] sm:text-[10px] uppercase font-bold text-[#16a34a] block">
               RESOLVED EXCHANGES
             </span>
-            <span className="text-2xl font-extrabold text-[#16a34a] text-embossed">
+            <span className="text-xl sm:text-2xl font-extrabold text-[#16a34a] text-embossed">
               {analysis.summary.resolvedThreads || 8}
             </span>
-            <span className="text-[10px] text-[#4a5568] block">
+            <span className="text-[9px] sm:text-[10px] text-[#4a5568] block">
               CONFIRMED CONSENSUS
             </span>
           </div>
 
-          <div className="p-4 bg-[#e0e5ec] shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-1">
-            <span className="text-[10px] uppercase font-bold text-[#ff4757] block">
+          <div className="p-2.5 sm:p-4 bg-[#e0e5ec] shadow-[4px_4px_8px_#babecc,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-0.5 sm:space-y-1">
+            <span className="text-[9px] sm:text-[10px] uppercase font-bold text-[#ff4757] block">
               UNANSWERED QS
             </span>
-            <span className="text-xl font-extrabold text-[#ff4757]">
+            <span className="text-lg sm:text-xl font-extrabold text-[#ff4757]">
               {analysis.summary.unansweredQuestionsCount}
             </span>
           </div>
 
-          <div className="p-4 bg-[#e0e5ec] shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-1">
-            <span className="text-[10px] uppercase font-bold text-[#d97706] block">
+          <div className="p-2.5 sm:p-4 bg-[#e0e5ec] shadow-[4px_4px_8px_#babecc,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-0.5 sm:space-y-1">
+            <span className="text-[9px] sm:text-[10px] uppercase font-bold text-[#d97706] block">
               REPEATED QUERIES
             </span>
-            <span className="text-xl font-extrabold text-[#d97706]">
+            <span className="text-lg sm:text-xl font-extrabold text-[#d97706]">
               {analysis.summary.repeatedClarificationsCount}
             </span>
           </div>
 
-          <div className="p-4 bg-[#e0e5ec] shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-1">
-            <span className="text-[10px] uppercase font-bold text-[#7c3aed] block">
+          <div className="p-2.5 sm:p-4 bg-[#e0e5ec] shadow-[4px_4px_8px_#babecc,-4px_-4px_8px_#ffffff] sm:shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] rounded-xl border border-[#ffffff]/50 space-y-0.5 sm:space-y-1">
+            <span className="text-[9px] sm:text-[10px] uppercase font-bold text-[#7c3aed] block">
               UNRESOLVED TOPICS
             </span>
-            <span className="text-xl font-extrabold text-[#7c3aed]">
+            <span className="text-lg sm:text-xl font-extrabold text-[#7c3aed]">
               {analysis.summary.unresolvedTopicsCount}
             </span>
           </div>
@@ -317,10 +317,10 @@ export const Results: React.FC = () => {
       </div>
 
       {/* Interactive Filters Bar */}
-      <div className="p-5 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] rounded-2xl border border-[#ffffff]/50 space-y-3.5 font-mono">
+      <div className="p-3.5 sm:p-5 bg-[#e0e5ec] shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] sm:shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] rounded-xl sm:rounded-2xl border border-[#ffffff]/50 space-y-2.5 sm:space-y-3.5 font-mono">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
           {/* Recessed Search box */}
-          <div className="relative flex-1 max-w-md">
+          <div className="relative flex-1 max-w-full md:max-w-md">
             <Search className="w-4 h-4 text-[#4a5568] absolute left-3.5 top-3" />
             <input
               type="text"
@@ -332,14 +332,14 @@ export const Results: React.FC = () => {
           </div>
 
           {/* Speaker select */}
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span className="text-xs uppercase font-bold text-[#4a5568] text-embossed">
               SPEAKER:
             </span>
             <select
               value={selectedSpeaker}
               onChange={e => setSelectedSpeaker(e.target.value)}
-              className="bg-[#e0e5ec] shadow-[inset_2px_2px_4px_#babecc,inset_-2px_-2px_4px_#ffffff] border-none text-xs px-3 py-2 text-[#2d3436] font-bold rounded-lg focus:outline-none"
+              className="bg-[#e0e5ec] shadow-[inset_2px_2px_4px_#babecc,inset_-2px_-2px_4px_#ffffff] border-none text-xs px-3 py-2 text-[#2d3436] font-bold rounded-lg focus:outline-none flex-1 sm:flex-none"
             >
               <option value="all">ALL PARTICIPANTS</option>
               {analysis.participants.map(p => (

@@ -25,7 +25,7 @@ export const HealthScoreGauge: React.FC<HealthScoreGaugeProps> = ({
   const color = getColor();
 
   return (
-    <div className="relative flex flex-col items-center text-center p-6 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] rounded-2xl corner-screws border border-[#ffffff]/40 font-sans">
+    <div className="relative flex flex-col items-center text-center p-3.5 sm:p-6 bg-[#e0e5ec] shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] sm:shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] rounded-xl sm:rounded-2xl corner-screws border border-[#ffffff]/40 font-sans">
       {/* Recessed Gauge Dial Well */}
       <div
         className="relative rounded-full p-2.5 bg-[#e0e5ec] shadow-[inset_4px_4px_8px_#babecc,inset_-4px_-4px_8px_#ffffff] flex items-center justify-center"

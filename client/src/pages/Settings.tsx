@@ -74,9 +74,9 @@ export const Settings: React.FC = () => {
   };
 
   return (
-    <div className="p-6 sm:p-8 max-w-5xl mx-auto space-y-8 font-sans">
+    <div className="p-3.5 sm:p-6 md:p-8 max-w-5xl mx-auto space-y-6 sm:space-y-8 font-sans">
       {/* Header */}
-      <div className="pb-6 border-b border-[#babecc]/50">
+      <div className="pb-4 sm:pb-6 border-b border-[#babecc]/50">
         <div className="flex items-center gap-2 mb-1">
           <span className="w-2.5 h-2.5 rounded-full bg-accent shadow-glow animate-pulse" />
           <span className="font-mono text-[11px] font-bold text-accent tracking-widest uppercase">
@@ -99,15 +99,15 @@ export const Settings: React.FC = () => {
       )}
 
       {/* AI Engine & Model Settings */}
-      <div className="p-6 bg-[#e0e5ec] shadow-card rounded-2xl border border-white/60 space-y-6 corner-screws-sm relative overflow-hidden">
-        <div className="flex items-center justify-between pb-3 border-b border-[#babecc]/40">
+      <div className="p-3.5 sm:p-5 md:p-6 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl border border-white/60 space-y-5 sm:space-y-6 corner-screws-sm relative overflow-hidden">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#babecc]/40">
           <div className="flex items-center gap-2">
             <Cpu className="w-4 h-4 text-accent" />
             <h3 className="text-sm font-bold text-foreground text-embossed uppercase tracking-wide">
               Neural Processing Parameters
             </h3>
           </div>
-          <span className="flex items-center gap-2 font-mono text-[11px] font-bold bg-[#d1d9e6]/60 shadow-recessed px-2.5 py-1 rounded-full">
+          <span className="flex items-center gap-2 font-mono text-[11px] font-bold bg-[#d1d9e6]/60 shadow-recessed px-2.5 py-1 rounded-full self-start sm:self-auto">
             <span className={`w-2 h-2 rounded-full ${healthStatus?.aiConnected ? 'bg-emerald-500 shadow-[0_0_8px_#10b981]' : 'bg-accent shadow-glow'}`} />
             <span className={healthStatus?.aiConnected ? 'text-emerald-700' : 'text-accent'}>
               {preferences.aiMode === 'local'
@@ -198,7 +198,7 @@ export const Settings: React.FC = () => {
         <div className="pt-2">
           <button
             onClick={handleSaveConfigs}
-            className="btn-tactile-primary"
+            className="btn-tactile-primary w-full sm:w-auto"
           >
             SAVE CALIBRATION
           </button>
@@ -206,7 +206,7 @@ export const Settings: React.FC = () => {
       </div>
 
       {/* Data Management & Persistence */}
-      <div className="p-6 bg-[#e0e5ec] shadow-card rounded-2xl border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
+      <div className="p-3.5 sm:p-5 md:p-6 bg-[#e0e5ec] shadow-card rounded-xl sm:rounded-2xl border border-white/60 space-y-4 corner-screws-sm relative overflow-hidden">
         <div className="flex items-center gap-2 pb-3 border-b border-[#babecc]/40">
           <Database className="w-4 h-4 text-accent" />
           <h3 className="text-sm font-bold text-foreground text-embossed uppercase tracking-wide">

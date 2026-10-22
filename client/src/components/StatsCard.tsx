@@ -43,18 +43,18 @@ export const StatsCard: React.FC<StatsCardProps> = ({
   }, [value]);
 
   return (
-    <div className="relative p-6 bg-[#e0e5ec] shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#babecc,-12px_-12px_24px_#ffffff,inset_1px_1px_0_rgba(255,255,255,0.6)] hover:-translate-y-1 rounded-2xl transition-all duration-300 group font-sans corner-screws border border-[#ffffff]/40">
+    <div className="relative p-3.5 sm:p-5 md:p-6 bg-[#e0e5ec] shadow-[6px_6px_12px_#babecc,-6px_-6px_12px_#ffffff] sm:shadow-[8px_8px_16px_#babecc,-8px_-8px_16px_#ffffff] hover:shadow-[12px_12px_24px_#babecc,-12px_-12px_24px_#ffffff,inset_1px_1px_0_rgba(255,255,255,0.6)] hover:-translate-y-1 rounded-xl sm:rounded-2xl transition-all duration-300 group font-sans corner-screws border border-[#ffffff]/40">
       {/* Top row: Label + Vent Slots + Icon */}
-      <div className="flex items-start justify-between mb-4">
+      <div className="flex items-start justify-between mb-2 sm:mb-4">
         <div>
-          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#4a5568] block text-embossed">
+          <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider text-[#4a5568] block text-embossed leading-tight">
             {label}
           </span>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-1.5 sm:gap-3 flex-shrink-0">
           {/* Mechanical Vent Slots */}
-          <div className="flex gap-1">
+          <div className="hidden sm:flex gap-1">
             <div className="h-5 w-1 rounded-full bg-[#d1d9e6] shadow-[inset_1px_1px_2px_rgba(0,0,0,0.2),0_1px_0_#ffffff]" />
             <div className="h-5 w-1 rounded-full bg-[#d1d9e6] shadow-[inset_1px_1px_2px_rgba(0,0,0,0.2),0_1px_0_#ffffff]" />
             <div className="h-5 w-1 rounded-full bg-[#d1d9e6] shadow-[inset_1px_1px_2px_rgba(0,0,0,0.2),0_1px_0_#ffffff]" />
@@ -62,22 +62,22 @@ export const StatsCard: React.FC<StatsCardProps> = ({
 
           {/* Tactile Icon Housing */}
           <div
-            className="w-10 h-10 rounded-xl bg-[#e0e5ec] shadow-[3px_3px_6px_#babecc,-3px_-3px_6px_#ffffff] border border-[#ffffff]/60 flex items-center justify-center transition-transform group-hover:scale-105"
+            className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-[#e0e5ec] shadow-[2px_2px_4px_#babecc,-2px_-2px_4px_#ffffff] sm:shadow-[3px_3px_6px_#babecc,-3px_-3px_6px_#ffffff] border border-[#ffffff]/60 flex items-center justify-center transition-transform group-hover:scale-105"
             style={{ color }}
           >
-            <Icon className="w-5 h-5" />
+            <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
           </div>
         </div>
       </div>
 
       {/* Numerical readout: Monospace technical display */}
-      <div className="flex items-baseline gap-2.5">
-        <span className="text-3xl sm:text-4xl font-mono font-extrabold tracking-tight text-[#2d3436] text-embossed">
+      <div className="flex items-baseline gap-2">
+        <span className="text-2xl sm:text-3xl md:text-4xl font-mono font-extrabold tracking-tight text-[#2d3436] text-embossed">
           {displayValue}
           {suffix}
         </span>
         {trend && (
-          <span className="text-[10px] font-mono font-bold uppercase px-2 py-0.5 rounded bg-[#d1d9e6] text-[#4a5568] shadow-[inset_1px_1px_2px_#babecc,inset_-1px_-1px_2px_#ffffff]">
+          <span className="text-[9px] sm:text-[10px] font-mono font-bold uppercase px-1.5 sm:px-2 py-0.5 rounded bg-[#d1d9e6] text-[#4a5568] shadow-[inset_1px_1px_2px_#babecc,inset_-1px_-1px_2px_#ffffff]">
             {trend}
           </span>
         )}
