@@ -53,7 +53,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenMobileMenu }) => {
         {/* LED Stamped Tag */}
         <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-md bg-[#e0e5ec] shadow-[inset_2px_2px_4px_#babecc,inset_-2px_-2px_4px_#ffffff] border border-[#ffffff]/40 text-[10px] font-mono font-bold uppercase text-[#4a5568]">
           <span className="w-2 h-2 rounded-full bg-[#22c55e] shadow-[0_0_6px_#22c55e]" />
-          <span>SERVER-SIDE AI CONFIG</span>
+          <span>DIAGNOSTIC ENGINE ACTIVE</span>
         </div>
 
         {/* Safety Orange Tactile Push Button */}

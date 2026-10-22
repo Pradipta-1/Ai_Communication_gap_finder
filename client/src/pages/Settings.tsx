@@ -115,8 +115,8 @@ export const Settings: React.FC = () => {
                 : preferences.aiMode === 'openrouter'
                   ? healthStatus?.aiConnected
                     ? `ONLINE // ${healthStatus.provider?.toUpperCase() || 'OPENROUTER'}`
-                    : healthStatus?.mode === 'unavailable'
-                      ? 'BACKEND OFFLINE'
+                    : healthStatus?.mode === 'unavailable' || healthStatus?.mode === 'standalone'
+                      ? 'BACKEND OFFLINE (LOCAL AI ACTIVE)'
                       : healthStatus
                         ? 'OPENROUTER KEY REQUIRED'
                         : 'CHECKING OPENROUTER'

@@ -29,14 +29,14 @@ export function getAnalysisPreferences(): AnalysisPreferences {
           : 0.7,
         aiMode: parsed.aiMode === 'openrouter' || parsed.aiMode === 'local'
           ? parsed.aiMode
-          : null,
+          : 'local',
       };
     }
   } catch {
     // Use the defaults if stored preferences are unavailable or invalid.
   }
 
-  return { temperature: 0.2, confidenceThreshold: 0.7, aiMode: null };
+  return { temperature: 0.2, confidenceThreshold: 0.7, aiMode: 'local' };
 }
 
 export function saveAnalysisPreferences(preferences: AnalysisPreferences): void {
@@ -159,11 +159,12 @@ export const api = {
       // Backend not running or unreachable
     }
     return {
-      status: 'unavailable',
-      mode: 'unavailable',
-      aiConnected: false,
-      model: 'Backend unavailable',
-      provider: 'openrouter',
+      status: 'standalone',
+      mode: 'standalone',
+      aiConnected: true,
+      model: 'GapLens Local AI (Browser Engine)',
+      provider: 'local',
+      database: 'Browser Local Storage',
     };
   },
 

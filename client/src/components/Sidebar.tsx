@@ -112,8 +112,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
             {/* LED Status Indicator */}
             <span className="flex items-center gap-1.5">
               <span className={`w-2 h-2 rounded-full ${
-                apiStatus.mode === 'live_ai'
-                  ? 'bg-[#22c55e] shadow-[0_0_8px_#22c55e] animate-pulse'
+                apiStatus.mode === 'live_ai' || apiStatus.mode === 'standalone'
+                  ? 'bg-[#22c55e] shadow-[0_0_8px_#22c55e]'
                   : apiStatus.mode === 'checking'
                     ? 'bg-amber-500 animate-pulse'
                     : 'bg-[#ff4757]'
@@ -121,17 +121,21 @@ export const Sidebar: React.FC<SidebarProps> = ({
               <span className={`text-[9px] font-mono font-bold ${
                 apiStatus.mode === 'live_ai'
                   ? 'text-[#22c55e]'
-                  : apiStatus.mode === 'checking'
-                    ? 'text-amber-600'
-                    : 'text-accent'
+                  : apiStatus.mode === 'standalone'
+                    ? 'text-[#22c55e]'
+                    : apiStatus.mode === 'checking'
+                      ? 'text-amber-600'
+                      : 'text-accent'
               }`}>
                 {apiStatus.mode === 'live_ai'
                   ? 'LIVE'
-                  : apiStatus.mode === 'checking'
-                    ? 'CHECK'
-                    : apiStatus.mode === 'unavailable'
-                      ? 'OFFLINE'
-                      : 'KEY REQUIRED'}
+                  : apiStatus.mode === 'standalone'
+                    ? 'STANDALONE'
+                    : apiStatus.mode === 'checking'
+                      ? 'CHECK'
+                      : apiStatus.mode === 'unavailable'
+                        ? 'OFFLINE'
+                        : 'KEY REQUIRED'}
               </span>
             </span>
           </div>
